@@ -1,0 +1,24 @@
+17:30:28 **** Incremental Build of configuration Debug for project eload ****
+make -j16 all 
+arm-none-eabi-g++ "../Core/Src/usbCom.cpp" -mcpu=cortex-m4 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usbCom.d" -MT"Core/Src/usbCom.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usbCom.o"
+In file included from ../Core/Inc/hw_interface.h:11,
+                 from ../Core/Inc/menu2.h:13,
+                 from ../Core/Inc/usbCom.h:19,
+                 from ../Core/Src/usbCom.cpp:9:
+../Core/Inc/pid.h:93: warning: ignoring '#pragma diag_suppress ' [-Wunknown-pragmas]
+   93 |         #pragma diag_suppress 177     /* Disable 'unused function' warning */
+      | 
+arm-none-eabi-g++ -o "eload.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Projects\electronic_load\code\eload\STM32F401VDTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="eload.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Finished building target: eload.elf
+ 
+arm-none-eabi-size  eload.elf 
+arm-none-eabi-objdump -h -S eload.elf  > "eload.list"
+   text	   data	    bss	    dec	    hex	filename
+ 236412	   1108	  15560	 253080	  3dc98	eload.elf
+Finished building: default.size.stdout
+ 
+Finished building: eload.list
+ 
+
+17:30:30 Build Finished. 0 errors, 1 warnings. (took 2s.4ms)
+

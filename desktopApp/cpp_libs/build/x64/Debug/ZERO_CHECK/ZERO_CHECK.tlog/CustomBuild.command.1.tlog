@@ -1,0 +1,10 @@
+^D:\PROJECTS\ELECTRONIC_LOAD\DESKTOPAPP\CPP_LIBS\BUILD\CMAKEFILES\DC78283369260B7F3574B0525535F384\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/electronic_load/desktopApp/cpp_libs -BD:/Projects/electronic_load/desktopApp/cpp_libs/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/electronic_load/desktopApp/cpp_libs/build/Eload.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^D:\PROJECTS\ELECTRONIC_LOAD\DESKTOPAPP\NANAGUI\BUILD\CMAKEFILES\260D6DD4F900E3A4B8F950C3AAA297F8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Projects/electronic_load/desktopApp/nanaGui -BD:/Projects/electronic_load/desktopApp/nanaGui/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Projects/electronic_load/desktopApp/nanaGui/build/Eload.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

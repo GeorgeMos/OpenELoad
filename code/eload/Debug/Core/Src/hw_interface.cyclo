@@ -1,0 +1,10 @@
+../Core/Src/hw_interface.cpp:10:1:hw::hw()	1
+../Core/Src/hw_interface.cpp:39:6:void hw::saveCalibratedValues()	1
+../Core/Src/hw_interface.cpp:48:6:void hw::loadCalibratedValues()	1
+../Core/Src/hw_interface.cpp:76:7:float hw::readVoltageFiltered()	2
+../Core/Src/hw_interface.cpp:100:7:float hw::readW()	1
+../Core/Src/hw_interface.cpp:106:7:float hw::readC()	6
+../Core/Src/hw_interface.cpp:133:7:float hw::readCFiltered()	1
+../Core/Src/hw_interface.cpp:145:6:void hw::setGateVoltage(int)	1
+../Core/Src/hw_interface.cpp:150:6:void hw::setC(float)	1
+../Core/Src/hw_interface.cpp:159:6:void hw::calC(int)	4

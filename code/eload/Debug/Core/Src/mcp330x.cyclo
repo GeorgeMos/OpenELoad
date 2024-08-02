@@ -1,0 +1,3 @@
+../Core/Src/mcp330x.cpp:16:1:mcp3302::mcp3302(GPIO_TypeDef*, uint16_t, SPI_HandleTypeDef)	1
+../Core/Src/mcp330x.cpp:24:10:uint16_t mcp3302::read(int, int)	3
+../Core/Src/mcp330x.cpp:41:10:uint16_t mcp3302::readDMA(int, int)	4
