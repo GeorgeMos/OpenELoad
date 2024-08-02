@@ -203,6 +203,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Path to a library.
 ELOAD_GUI:FILEPATH=ELOAD_GUI-NOTFOUND
 
+//Path to a library.
+ELOAD_LIB:FILEPATH=D:/Projects/electronic_load/desktopApp/cpp_libs/library/Debug/EloadLib.lib
+
 //Value Computed by CMake
 Eload_BINARY_DIR:STATIC=D:/Projects/electronic_load/desktopApp/nanaGui/build
 
@@ -213,7 +216,7 @@ Eload_IS_TOP_LEVEL:STATIC=ON
 Eload_SOURCE_DIR:STATIC=D:/Projects/electronic_load/desktopApp/nanaGui
 
 //Path to a library.
-NANA:FILEPATH=NANA-NOTFOUND
+NANA:FILEPATH=D:/Projects/electronic_load/desktopApp/nanaGui/nana-master/build/bin/nana_v142_Debug_x64.lib
 
 
 ########################
