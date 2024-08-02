@@ -55,6 +55,3 @@ set_target_properties(EloadLib PROPERTIES
 set_target_properties(Eload PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin
 )
-
-# Link any additional libraries if needed (example)
-# target_link_libraries(Eload some_library)
