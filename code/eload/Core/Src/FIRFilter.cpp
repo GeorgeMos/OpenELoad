@@ -1,9 +1,14 @@
 #include "FIRFilter.h"
+#include <stdlib.h>
+//static float FIR_IMPULSE_RESPONSE[FIR_FILTER_LENGTH] = {0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f}; //20 Point moving average filter
 
-static float FIR_IMPULSE_RESPONSE[FIR_FILTER_LENGTH] = {0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f,0.05f}; //20 Point moving average filter
-
-
+float* FIR_IMPULSE_RESPONSE;
 void FIRFilter_Init(FIRFilter *fir) {
+	FIR_IMPULSE_RESPONSE = (float*)malloc(sizeof(float)*FIR_FILTER_LENGTH);
+	for(int i = 0; i < FIR_FILTER_LENGTH; i++)
+	{
+		FIR_IMPULSE_RESPONSE[i] = val;
+	}
 
 	/* Clear filter buffer */
 	for (uint8_t n = 0; n < FIR_FILTER_LENGTH; n++) {
@@ -54,6 +59,7 @@ float FIRFilter_Update(FIRFilter *fir, float inp) {
 
 		/* Multiply impulse response with shifted input sample and add to output */
 		fir->out += FIR_IMPULSE_RESPONSE[n] * fir->buf[sumIndex];
+		//fir->out += 1/FIR_FILTER_LENGTH * fir->buf[sumIndex];
 
 	}
 

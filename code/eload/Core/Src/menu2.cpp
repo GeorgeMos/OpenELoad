@@ -791,7 +791,7 @@ void Menu::cCal_Mode()
 
 	HD44780_SetCursor(0, 1);
 	HD44780_PrintStr("Keep inputs free");
-	this->hwInterface->calC(50000);
+	this->hwInterface->calC(500000);
 	//this->hwInterface->saveCalibratedValues();
 
 	HD44780_Clear();

@@ -218,6 +218,9 @@ Eload_SOURCE_DIR:STATIC=D:/Projects/electronic_load/desktopApp/nanaGui
 //Path to a library.
 NANA:FILEPATH=D:/Projects/electronic_load/desktopApp/nanaGui/nana-master/build/bin/nana_v142_Debug_x64.lib
 
+//The directory containing a CMake configuration file for nlohmann_json.
+nlohmann_json_DIR:PATH=nlohmann_json_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

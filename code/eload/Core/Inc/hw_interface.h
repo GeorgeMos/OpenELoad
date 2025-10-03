@@ -18,7 +18,7 @@
 #define KI_FLASH_ADDR 0x0803FFE0
 #define KD_FLASH_ADDR 0x0803FFF0
 
-#define PWM_BASELINE 500
+#define PWM_BASELINE 650
 
 extern SPI_HandleTypeDef hspi1;
 extern TIM_HandleTypeDef htim1;
@@ -35,6 +35,9 @@ private:
 	float adcVREF;
 	double Kp, Ki, Kd;
 	float cMargin = 0.01;
+
+	float integral = 0;
+	float prevError = 0;
 
 
 
@@ -63,6 +66,14 @@ public:
 	void calC(int times);
 	void loadCalibratedValues();
 	void saveCalibratedValues();
+
+	void setKp(double Kp);
+	void setKi(double Ki);
+	void setKd(double Kd);
+
+	double getKp();
+	double getKi();
+	double getKd();
 };
 
 

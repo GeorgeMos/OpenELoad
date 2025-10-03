@@ -6,21 +6,23 @@
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="txBuf"/>
+		<item key="selection" value="updateHardware"/>
 		<list key="findhistory">
+			<item value="updateHardware"/>
+			<item value="setC"/>
+			<item value="PWM_BASELINE"/>
+			<item value="FIR_IMPULSE_RESPONSE"/>
+			<item value="calC"/>
+			<item value="cal"/>
+			<item value="readCFiltered"/>
+			<item value="readCfiltered"/>
+			<item value="readC"/>
+			<item value="this-&gt;pwm"/>
 			<item value="txBuf"/>
 			<item value="HAL_GPIO"/>
 			<item value="send"/>
 			<item value="buffer"/>
 			<item value="USER CODE BEGIN PRIVATE_TYPES"/>
-			<item value="USER CODE BEGIN PRIVATE"/>
-			<item value="USBD_OK"/>
-			<item value="CDC_Receive_FS"/>
-			<item value="HAL_FLASH_Program"/>
-			<item value="HAL_FLASH_ProgramHalf"/>
-			<item value="FLASH_TYPEERASE_PAGES"/>
-			<item value="HAL_SPI_TransmitReceive_DMA"/>
-			<item value="HAL_SPI_TransmitReceive"/>
 		</list>
 		<list key="replacehistory">
 		</list>

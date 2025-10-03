@@ -47,6 +47,7 @@ void UsbManager::getCommand()
 	char* buf = (char*)usbBuffer;
 	std::string strBuf(buf);
 	std::string first_five = strBuf.substr(0,5);
+	std::string first_six = strBuf.substr(0,6);
 	bool found = 0;
 	//std::string strBuf = "DISCOVER";
 	if(this->commandMap.find(strBuf) != this->commandMap.end())
@@ -79,6 +80,29 @@ void UsbManager::getCommand()
 		this->currState = USB_STATES::SET_P_VAL;
 
 	}
+
+	else if(first_six.compare("SET_KP") == 0 && !found)
+	{
+		//Set Current value command found (SET_Kp 00.0000)
+		std::string value = strBuf.substr(7, 7);
+		this->setKpVal = std::stod(value);
+		this->currState = USB_STATES::SET_KP_VAL;
+	}
+	else if(first_six.compare("SET_KI") == 0 && !found)
+	{
+		//Set Current value command found (SET_Kp 00.0000)
+		std::string value = strBuf.substr(7, 7);
+		this->setKiVal = std::stod(value);
+		this->currState = USB_STATES::SET_KI_VAL;
+	}
+	else if(first_six.compare("SET_KD") == 0 && !found)
+	{
+		//Set Current value command found (SET_Kp 00.0000)
+		std::string value = strBuf.substr(7, 7);
+		this->setKdVal = std::stod(value);
+		this->currState = USB_STATES::SET_KD_VAL;
+	}
+
 	else //if(this->commandMap.find(strBuf) == this->commandMap.end())
 	{
 		//Command does not exist
@@ -113,6 +137,11 @@ UsbManager::UsbManager(Menu* menuHandle)
 	this->commandMap["SET_CP_MODE"] = USB_COMMANDS::SET_CP_MODE;
 	this->commandMap["EN_SEND_DATA"] = USB_COMMANDS::EN_SEND_DATA;
 	this->commandMap["EN_GATE"] = USB_COMMANDS::EN_GATE;
+
+	this->commandMap["GET_KP"] = USB_COMMANDS::GET_KP;
+	this->commandMap["GET_KI"] = USB_COMMANDS::GET_KI;
+	this->commandMap["GET_KD"] = USB_COMMANDS::GET_KD;
+
 
 }
 
@@ -179,6 +208,33 @@ void UsbManager::run()
 			this->menuHandle->toggleGate();
 			rstCommandBuf();
 		}
+		if(this->currCommand == USB_COMMANDS::GET_KP)
+		{
+			std::string str = std::to_string(this->menuHandle->hwInterface->getKp());
+			const char* res = str.c_str();
+			memcpy(this->txBuf, (uint8_t*)res, str.size());
+			usbSend(txBuf, 5);
+			rstTxBuf();
+			rstCommandBuf();
+		}
+		if(this->currCommand == USB_COMMANDS::GET_KI)
+		{
+			std::string str = std::to_string(this->menuHandle->hwInterface->getKi());
+			const char* res = str.c_str();
+			memcpy(this->txBuf, (uint8_t*)res, str.size());
+			usbSend(txBuf, 5);
+			rstTxBuf();
+			rstCommandBuf();
+		}
+		if(this->currCommand == USB_COMMANDS::GET_KD)
+		{
+			std::string str = std::to_string(this->menuHandle->hwInterface->getKd());
+			const char* res = str.c_str();
+			memcpy(this->txBuf, (uint8_t*)res, str.size());
+			usbSend(txBuf, 5);
+			rstTxBuf();
+			rstCommandBuf();
+		}
 		break;
 	case USB_STATES::USB_CC_MODE:
 		this->rstSetValues();
@@ -213,6 +269,21 @@ void UsbManager::run()
 		this->currState = USB_STATES::CONNECTED;
 		rstCommandBuf();
 		break;
+	case USB_STATES::SET_KP_VAL:
+		this->menuHandle->hwInterface->setKp(this->setKpVal);
+		this->currState = USB_STATES::CONNECTED;
+		rstCommandBuf();
+		break;
+	case USB_STATES::SET_KI_VAL:
+		this->menuHandle->hwInterface->setKi(this->setKiVal);
+		this->currState = USB_STATES::CONNECTED;
+		rstCommandBuf();
+		break;
+	case USB_STATES::SET_KD_VAL:
+		this->menuHandle->hwInterface->setKd(this->setKdVal);
+		this->currState = USB_STATES::CONNECTED;
+		rstCommandBuf();
+		break;
 	default:
 		break;
 	}
@@ -233,6 +304,10 @@ void UsbManager::rstSetValues()
 	this->setCVal = 0.f;
 	this->setRVal = 0.f;
 	this->setPVal = 0.f;
+
+	this->setKpVal = this->menuHandle->hwInterface->getKp();
+	this->setKiVal = this->menuHandle->hwInterface->getKi();
+	this->setKdVal = this->menuHandle->hwInterface->getKd();
 }
 
 void UsbManager::sendData()

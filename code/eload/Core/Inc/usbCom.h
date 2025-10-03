@@ -30,7 +30,10 @@ enum USB_STATES
 	USB_CP_MODE,
 	SET_C_VAL,
 	SET_R_VAL,
-	SET_P_VAL
+	SET_P_VAL,
+	SET_KP_VAL,
+	SET_KI_VAL,
+	SET_KD_VAL
 };
 
 
@@ -46,7 +49,10 @@ enum USB_COMMANDS
 	SET_CR_MODE,
 	SET_CP_MODE,
 	EN_SEND_DATA,	//Toggle send data
-	EN_GATE			//Toggle the MOSFET gate
+	EN_GATE,			//Toggle the MOSFET gate
+	GET_KP,
+	GET_KI,
+	GET_KD
 };
 
 void usbSend(uint8_t* txBuf, uint32_t len);
@@ -79,6 +85,10 @@ private:
 	double setCVal;
 	double setRVal;
 	double setPVal;
+
+	double setKpVal;
+	double setKiVal;
+	double setKdVal;
 
 	bool sendCVPTData;	//Send current, voltage, power, temperature data
 	//You can copy and paste this in to the c++ code of the desktop app

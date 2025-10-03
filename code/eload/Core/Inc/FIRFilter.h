@@ -3,7 +3,8 @@
 
 #include <stdint.h>
 
-#define FIR_FILTER_LENGTH 20
+const int FIR_FILTER_LENGTH = 100;
+const float val = 0.01f;	//1/FIR_FILTER_LENGTH
 
 typedef struct {
 	float 	buf[FIR_FILTER_LENGTH];

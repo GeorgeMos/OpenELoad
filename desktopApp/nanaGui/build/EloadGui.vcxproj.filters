@@ -4,6 +4,12 @@
     <ClCompile Include="D:\Projects\electronic_load\desktopApp\nanaGui\main\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Projects\electronic_load\desktopApp\nanaGui\src\mainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\electronic_load\desktopApp\nanaGui\src\widgetBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Projects\electronic_load\desktopApp\nanaGui\CMakeLists.txt" />

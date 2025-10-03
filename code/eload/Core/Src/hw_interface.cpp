@@ -22,17 +22,17 @@ hw::hw()
 	this->ccur = 0;
 	this->cvolt = 0;
 	this->scur = 0;
-	this->Kp = 0.5;
-	this->Ki = 5000;
-	this->Kd = 0.00001;
+	this->Kp = 25;
+	this->Ki = 0.3;
+	this->Kd = 0.4;
 	FIRFilter_Init(&this->mavfVoltage);
 	FIRFilter_Init(&this->mavfVoltageF);
 	FIRFilter_Init(&this->mavfCurrent);
 
-	this->cPid = new PID(&this->ccur, &this->pwm, &this->scur, this->Kp, this->Ki, this->Kd, _PID_CD_DIRECT);
-	this->cPid->SetMode(_PID_MODE_AUTOMATIC);
-	this->cPid->SetSampleTime(1);
-	this->cPid->SetOutputLimits(PWM_BASELINE, 1000);
+	//this->cPid = new PID(&this->ccur, &this->pwm, &this->scur, this->Kp, this->Ki, this->Kd, _PID_CD_DIRECT);
+	//this->cPid->SetMode(_PID_MODE_AUTOMATIC);
+	//this->cPid->SetSampleTime(1);
+	//this->cPid->SetOutputLimits(PWM_BASELINE, 1000);
 	//this->cMargin = 0.01;
 }
 
@@ -138,6 +138,7 @@ float hw::readCFiltered()
 	c = ((value * (adcVREF / 4095) - 2.5)*10) + this->cOffset;
 	this->ccur = FIRFilter_Update(&this->mavfCurrent, c);
 
+
 	return this->ccur;
 }
 
@@ -151,8 +152,24 @@ void hw::setC(float c)
 {
 	this->scur = c;
 	this->ccur = this->readCFiltered();
-	this->cPid->Compute();
+	//this->cPid->Compute();
+
+	//PID Loop
+	float error = this->scur - this->ccur;
+	this->integral += error;
+	float derivative = error - this->prevError;
+
+	int calcPwm = this->Kp * error + this->Ki*this->integral + this->Kd * derivative;
+	this->prevError = error;
+
+	this->pwm = PWM_BASELINE + calcPwm;
+
+	if(this->pwm < 0){this->pwm = 0;}
+	if(this->pwm > 1000){this->pwm = 1000;}
+
+	//this->pwm = 850;
 	this->setGateVoltage(this->pwm);
+
 
 }
 
@@ -167,5 +184,36 @@ void hw::calC(int times)
 		if(current > 0){this->cOffset -= 0.001;}
 		else if(current < 0){this->cOffset += 0.001;}
 	}
+	//this->cOffset -= 0.015f;
 
+}
+
+void hw::setKp(double Kp)
+{
+	this->Kp = Kp;
+}
+
+void hw::setKi(double Ki)
+{
+	this->Ki = Ki;
+}
+
+void hw::setKd(double Kd)
+{
+	this->Kd = Kd;
+}
+
+double hw::getKp()
+{
+	return this->Kp;
+}
+
+double hw::getKi()
+{
+	return this->Ki;
+}
+
+double hw::getKd()
+{
+	return this->Kd;
 }

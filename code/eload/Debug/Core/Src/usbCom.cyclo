@@ -9,17 +9,17 @@ C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 ../Core/Src/usbCom.cpp:13:6:void usbSend(uint8_t*, uint32_t)	1
 ../Core/Src/usbCom.cpp:31:6:void UsbManager::sendOnce(uint8_t*, uint32_t)	2
 ../Core/Src/usbCom.cpp:40:6:void UsbManager::rstSendOnce()	1
-../Core/Src/usbCom.cpp:45:6:void UsbManager::getCommand()	19
+../Core/Src/usbCom.cpp:45:6:void UsbManager::getCommand()	35
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_tree.h:660:9:std::_Rb_tree<std::__cxx11::basic_string<char>, std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS>, std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS> >, std::less<std::__cxx11::basic_string<char> >, std::allocator<std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS> > >::_Rb_tree_impl<std::less<std::__cxx11::basic_string<char> >, true>::~_Rb_tree_impl()	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_tree.h:928:7:std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::_Rb_tree() [with _Key = std::__cxx11::basic_string<char>; _Val = std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS>; _KeyOfValue = std::_Select1st<std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS> >; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS> >]	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_map.h:185:7:std::map<_Key, _Tp, _Compare, _Alloc>::map() [with _Key = std::__cxx11::basic_string<char>; _Tp = USB_COMMANDS; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS> >]	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/bits/stl_map.h:302:7:std::map<_Key, _Tp, _Compare, _Alloc>::~map() [with _Key = std::__cxx11::basic_string<char>; _Tp = USB_COMMANDS; _Compare = std::less<std::__cxx11::basic_string<char> >; _Alloc = std::allocator<std::pair<const std::__cxx11::basic_string<char>, USB_COMMANDS> >]	1
-../Core/Src/usbCom.cpp:91:1:UsbManager::UsbManager(Menu*)	20
-../Core/Src/usbCom.cpp:119:6:void UsbManager::run()	20
-../Core/Src/usbCom.cpp:223:6:void UsbManager::rstCommandBuf()	1
-../Core/Src/usbCom.cpp:231:6:void UsbManager::rstSetValues()	1
-../Core/Src/usbCom.cpp:238:6:void UsbManager::sendData()	7
-../Core/Src/usbCom.cpp:251:6:void UsbManager::rstTxBuf()	1
+../Core/Src/usbCom.cpp:115:1:UsbManager::UsbManager(Menu*)	27
+../Core/Src/usbCom.cpp:148:6:void UsbManager::run()	26
+../Core/Src/usbCom.cpp:294:6:void UsbManager::rstCommandBuf()	1
+../Core/Src/usbCom.cpp:302:6:void UsbManager::rstSetValues()	1
+../Core/Src/usbCom.cpp:313:6:void UsbManager::sendData()	7
+../Core/Src/usbCom.cpp:326:6:void UsbManager::rstTxBuf()	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\c++\11.3.1\ext\string_conversions.h:63:2:)::_Save_errno::_Save_errno() [with _TRet = double; _Ret = double; _CharT = char; _Base = {}]	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\c++\11.3.1\ext\string_conversions.h:64:2:)::_Save_errno::~_Save_errno() [with _TRet = double; _Ret = double; _CharT = char; _Base = {}]	2
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\arm-none-eabi\include\c++\11.3.1\ext\string_conversions.h:70:4:)::_Range_chk::_S_chk(_TRet, std::false_type) [with _TRet = double; _Ret = double; _CharT = char; _Base = {}]	1
@@ -129,6 +129,6 @@ C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.external
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/tuple:1377:5:>&) [with unsigned int __i = 0; _Head = std::__cxx11::basic_string<char>&&; _Tail = {}]	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/tuple:424:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with unsigned int _Idx = 0; _Head = std::__cxx11::basic_string<char>&&]	1
 C:\ST\STM32CubeIDE_1.14.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/c++/11.3.1/tuple:233:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with unsigned int _Idx = 0; _Head = std::__cxx11::basic_string<char>&&]	1
-../Core/Src/usbCom.cpp:254:1:void __static_initialization_and_destruction_0(int, int)	5
-../Core/Src/usbCom.cpp:254:1:cpp)	1
-../Core/Src/usbCom.cpp:254:1:cpp)	1
+../Core/Src/usbCom.cpp:329:1:void __static_initialization_and_destruction_0(int, int)	5
+../Core/Src/usbCom.cpp:329:1:cpp)	1
+../Core/Src/usbCom.cpp:329:1:cpp)	1
